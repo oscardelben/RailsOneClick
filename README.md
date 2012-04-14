@@ -49,6 +49,10 @@ click I want to create a first step toward that vision that Yehuda had.
 I really hope this project will be useful to Yehuda and eventually for
 the Ruby community itself.
 
+### License
+
+MIT
+
 
 ### Early Development screenshots
 
