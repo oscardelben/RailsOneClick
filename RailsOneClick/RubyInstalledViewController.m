@@ -24,4 +24,13 @@
     return self;
 }
 
+- (IBAction)openTerminalWindow:(id)sender
+{
+    NSString *script = @"cd ~/Documents/rails_one_click; export PATH=~/Documents/rails_one_click/ruby/bin:$PATH; clear";
+    NSString *apple_script = [NSString stringWithFormat:@"tell application \"Terminal\" to do script \"%@\"", script];
+    
+    NSAppleScript *as = [[NSAppleScript alloc] initWithSource:apple_script];
+    [as executeAndReturnError:nil];
+}
+
 @end

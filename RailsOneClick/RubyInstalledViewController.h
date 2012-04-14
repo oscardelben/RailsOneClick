@@ -10,4 +10,6 @@
 
 @interface RubyInstalledViewController : NSViewController
 
+- (IBAction)openTerminalWindow:(id)sender;
+
 @end
