@@ -39,3 +39,12 @@ community really needs it. With Rails one
 click I want to create a first step toward that vision that Yehuda had.
 I really hope this project will be useful to Yehuda and eventually for
 the Ruby community itself.
+
+
+### Early Development screenshots
+
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/install.png)
+
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/installed.png)
+
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/console.png)
