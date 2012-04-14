@@ -16,3 +16,5 @@ fi
 cd ruby-1.9.3-p125
 ./configure --prefix=$target_dir --disable-install-doc
 make && make install
+
+exit

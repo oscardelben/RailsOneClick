@@ -13,6 +13,13 @@
 		BFC858511539A3D0005D0372 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BFC8584F1539A3D0005D0372 /* Credits.rtf */; };
 		BFC858541539A3D0005D0372 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC858531539A3D0005D0372 /* AppDelegate.m */; };
 		BFC858571539A3D0005D0372 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC858551539A3D0005D0372 /* MainMenu.xib */; };
+		BFC8585F1539BD9B005D0372 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8585E1539BD9B005D0372 /* AppController.m */; };
+		BFC858621539BF52005D0372 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = BFC858601539BF52005D0372 /* scripts */; };
+		BFC858631539BF52005D0372 /* templates in Resources */ = {isa = PBXBuildFile; fileRef = BFC858611539BF52005D0372 /* templates */; };
+		BFC858671539C6C9005D0372 /* InstallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC858651539C6C9005D0372 /* InstallViewController.m */; };
+		BFC858681539C6C9005D0372 /* InstallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC858661539C6C9005D0372 /* InstallViewController.xib */; };
+		BFC858711539DD43005D0372 /* RubyInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8586F1539DD43005D0372 /* RubyInstalledViewController.m */; };
+		BFC858721539DD43005D0372 /* RubyInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC858701539DD43005D0372 /* RubyInstalledViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,16 @@
 		BFC858521539A3D0005D0372 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BFC858531539A3D0005D0372 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BFC858561539A3D0005D0372 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BFC8585D1539BD9B005D0372 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		BFC8585E1539BD9B005D0372 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		BFC858601539BF52005D0372 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		BFC858611539BF52005D0372 /* templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = templates; sourceTree = "<group>"; };
+		BFC858641539C6C8005D0372 /* InstallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstallViewController.h; sourceTree = "<group>"; };
+		BFC858651539C6C9005D0372 /* InstallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstallViewController.m; sourceTree = "<group>"; };
+		BFC858661539C6C9005D0372 /* InstallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallViewController.xib; sourceTree = "<group>"; };
+		BFC8586E1539DD43005D0372 /* RubyInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubyInstalledViewController.h; sourceTree = "<group>"; };
+		BFC8586F1539DD43005D0372 /* RubyInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RubyInstalledViewController.m; sourceTree = "<group>"; };
+		BFC858701539DD43005D0372 /* RubyInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RubyInstalledViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +66,8 @@
 				BFC858461539A3D0005D0372 /* RailsOneClick */,
 				BFC8583F1539A3D0005D0372 /* Frameworks */,
 				BFC8583D1539A3D0005D0372 /* Products */,
+				BFC858601539BF52005D0372 /* scripts */,
+				BFC858611539BF52005D0372 /* templates */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,10 +101,19 @@
 		BFC858461539A3D0005D0372 /* RailsOneClick */ = {
 			isa = PBXGroup;
 			children = (
+				BFC858691539D0BA005D0372 /* Vendor */,
 				BFC858521539A3D0005D0372 /* AppDelegate.h */,
 				BFC858531539A3D0005D0372 /* AppDelegate.m */,
 				BFC858551539A3D0005D0372 /* MainMenu.xib */,
 				BFC858471539A3D0005D0372 /* Supporting Files */,
+				BFC8585D1539BD9B005D0372 /* AppController.h */,
+				BFC8585E1539BD9B005D0372 /* AppController.m */,
+				BFC858641539C6C8005D0372 /* InstallViewController.h */,
+				BFC858651539C6C9005D0372 /* InstallViewController.m */,
+				BFC858661539C6C9005D0372 /* InstallViewController.xib */,
+				BFC8586E1539DD43005D0372 /* RubyInstalledViewController.h */,
+				BFC8586F1539DD43005D0372 /* RubyInstalledViewController.m */,
+				BFC858701539DD43005D0372 /* RubyInstalledViewController.xib */,
 			);
 			path = RailsOneClick;
 			sourceTree = "<group>";
@@ -100,6 +128,13 @@
 				BFC8584F1539A3D0005D0372 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFC858691539D0BA005D0372 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +191,10 @@
 				BFC8584B1539A3D0005D0372 /* InfoPlist.strings in Resources */,
 				BFC858511539A3D0005D0372 /* Credits.rtf in Resources */,
 				BFC858571539A3D0005D0372 /* MainMenu.xib in Resources */,
+				BFC858621539BF52005D0372 /* scripts in Resources */,
+				BFC858631539BF52005D0372 /* templates in Resources */,
+				BFC858681539C6C9005D0372 /* InstallViewController.xib in Resources */,
+				BFC858721539DD43005D0372 /* RubyInstalledViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +207,9 @@
 			files = (
 				BFC8584D1539A3D0005D0372 /* main.m in Sources */,
 				BFC858541539A3D0005D0372 /* AppDelegate.m in Sources */,
+				BFC8585F1539BD9B005D0372 /* AppController.m in Sources */,
+				BFC858671539C6C9005D0372 /* InstallViewController.m in Sources */,
+				BFC858711539DD43005D0372 /* RubyInstalledViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
