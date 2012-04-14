@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFC858411539A3D0005D0372 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC858401539A3D0005D0372 /* Cocoa.framework */; };
+		BFC8584B1539A3D0005D0372 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC858491539A3D0005D0372 /* InfoPlist.strings */; };
+		BFC8584D1539A3D0005D0372 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8584C1539A3D0005D0372 /* main.m */; };
+		BFC858511539A3D0005D0372 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BFC8584F1539A3D0005D0372 /* Credits.rtf */; };
+		BFC858541539A3D0005D0372 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC858531539A3D0005D0372 /* AppDelegate.m */; };
+		BFC858571539A3D0005D0372 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC858551539A3D0005D0372 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BFC8583C1539A3D0005D0372 /* RailsOneClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsOneClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC858401539A3D0005D0372 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BFC858431539A3D0005D0372 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BFC858441539A3D0005D0372 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BFC858451539A3D0005D0372 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFC858481539A3D0005D0372 /* RailsOneClick-Info.plist */ = {isa = PBXFileReference; path = "RailsOneClick-Info.plist"; sourceTree = "<group>"; };
+		BFC8584A1539A3D0005D0372 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFC8584C1539A3D0005D0372 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFC8584E1539A3D0005D0372 /* RailsOneClick-Prefix.pch */ = {isa = PBXFileReference; path = "RailsOneClick-Prefix.pch"; sourceTree = "<group>"; };
+		BFC858501539A3D0005D0372 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BFC858521539A3D0005D0372 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		BFC858531539A3D0005D0372 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BFC858561539A3D0005D0372 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFC858391539A3D0005D0372 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC858411539A3D0005D0372 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFC858311539A3D0005D0372 = {
+			isa = PBXGroup;
+			children = (
+				BFC858461539A3D0005D0372 /* RailsOneClick */,
+				BFC8583F1539A3D0005D0372 /* Frameworks */,
+				BFC8583D1539A3D0005D0372 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFC8583D1539A3D0005D0372 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFC8583C1539A3D0005D0372 /* RailsOneClick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFC8583F1539A3D0005D0372 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC858401539A3D0005D0372 /* Cocoa.framework */,
+				BFC858421539A3D0005D0372 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC858421539A3D0005D0372 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC858431539A3D0005D0372 /* AppKit.framework */,
+				BFC858441539A3D0005D0372 /* CoreData.framework */,
+				BFC858451539A3D0005D0372 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BFC858461539A3D0005D0372 /* RailsOneClick */ = {
+			isa = PBXGroup;
+			children = (
+				BFC858521539A3D0005D0372 /* AppDelegate.h */,
+				BFC858531539A3D0005D0372 /* AppDelegate.m */,
+				BFC858551539A3D0005D0372 /* MainMenu.xib */,
+				BFC858471539A3D0005D0372 /* Supporting Files */,
+			);
+			path = RailsOneClick;
+			sourceTree = "<group>";
+		};
+		BFC858471539A3D0005D0372 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFC858481539A3D0005D0372 /* RailsOneClick-Info.plist */,
+				BFC858491539A3D0005D0372 /* InfoPlist.strings */,
+				BFC8584C1539A3D0005D0372 /* main.m */,
+				BFC8584E1539A3D0005D0372 /* RailsOneClick-Prefix.pch */,
+				BFC8584F1539A3D0005D0372 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFC8583B1539A3D0005D0372 /* RailsOneClick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC8585A1539A3D0005D0372 /* Build configuration list for PBXNativeTarget "RailsOneClick" */;
+			buildPhases = (
+				BFC858381539A3D0005D0372 /* Sources */,
+				BFC858391539A3D0005D0372 /* Frameworks */,
+				BFC8583A1539A3D0005D0372 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RailsOneClick;
+			productName = RailsOneClick;
+			productReference = BFC8583C1539A3D0005D0372 /* RailsOneClick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFC858331539A3D0005D0372 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Fructivity;
+			};
+			buildConfigurationList = BFC858361539A3D0005D0372 /* Build configuration list for PBXProject "RailsOneClick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BFC858311539A3D0005D0372;
+			productRefGroup = BFC8583D1539A3D0005D0372 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFC8583B1539A3D0005D0372 /* RailsOneClick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFC8583A1539A3D0005D0372 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC8584B1539A3D0005D0372 /* InfoPlist.strings in Resources */,
+				BFC858511539A3D0005D0372 /* Credits.rtf in Resources */,
+				BFC858571539A3D0005D0372 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFC858381539A3D0005D0372 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC8584D1539A3D0005D0372 /* main.m in Sources */,
+				BFC858541539A3D0005D0372 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFC858491539A3D0005D0372 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC8584A1539A3D0005D0372 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BFC8584F1539A3D0005D0372 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC858501539A3D0005D0372 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		BFC858551539A3D0005D0372 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC858561539A3D0005D0372 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFC858581539A3D0005D0372 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BFC858591539A3D0005D0372 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BFC8585B1539A3D0005D0372 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsOneClick/RailsOneClick-Prefix.pch";
+				INFOPLIST_FILE = "RailsOneClick/RailsOneClick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BFC8585C1539A3D0005D0372 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RailsOneClick/RailsOneClick-Prefix.pch";
+				INFOPLIST_FILE = "RailsOneClick/RailsOneClick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFC858361539A3D0005D0372 /* Build configuration list for PBXProject "RailsOneClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC858581539A3D0005D0372 /* Debug */,
+				BFC858591539A3D0005D0372 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC8585A1539A3D0005D0372 /* Build configuration list for PBXNativeTarget "RailsOneClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC8585B1539A3D0005D0372 /* Debug */,
+				BFC8585C1539A3D0005D0372 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFC858331539A3D0005D0372 /* Project object */;
+}
