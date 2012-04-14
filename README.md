@@ -12,10 +12,19 @@ Current problems/features to add:
 * Add a better interface for managing rails apps
 * The UI sucks!
 
+What's already there:
+
+* Ruby 1.9.3-p125 sandboxed inside Documents/rails_one_click/ruby
+* Latest rails version ready to use
+* Once ruby is installed, you'll be able to open a terminal window
+  inside Documents/rails_one_click with Ruby and Rails already loaded.
+(I will provide a better interface soon with server start and stop etc).
+
 ### Ruby sandbox
 
-Ruby will not be installed globally, instead you'll be able to open and
-create rails apps directly from the RailsOneClick app.
+Ruby is installed inside Documents/rails_one_click. That way if you ever
+mess up something you'll just need to delete the ruby directory inside
+that folder.
 
 ### Project status
 
