@@ -43,8 +43,8 @@ the Ruby community itself.
 
 ### Early Development screenshots
 
-![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/install.png)
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/install.png)
 
-![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/installed.png)
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/installed.png)
 
-![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshot/console.png)
+![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/console.png)
