@@ -14,3 +14,6 @@ create rails apps directly from the RailsOneClick app.
 
 This project is alpha. I'm looking for contributors and especially
 testers. Your help is much apreciated.
+
+Developers note: rvm will conflict with Rails one click. It is
+recommended that you temporarily comment it out.in your profile file
