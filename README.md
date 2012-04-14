@@ -3,7 +3,7 @@
 This software allows one click install of Ruby 1.9.3 and Rails (the most
 recent version).
 
-This software is not ready! I'm still working out some major problems.
+This software is not ready!
 
 Current problems/features to add:
 
