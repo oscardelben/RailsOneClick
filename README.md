@@ -1,16 +1,29 @@
 # Rails One Click Install for Mac Os X (10.6 or higher)
 
-This software allows one click install of Ruby 1.9.3 and Rails (the most
-recent version).
+Rails One Click is the perfect tool  for installing and managing rails
+applications.
 
-This software is not ready! I'm still working out some major problems.
+Rails One Click is targeted at beginner who have little or no
+programming experience, or to developers who want to try rails but don't
+want to bother about installing ruby and managing dependencies.
 
-Current problems/features to add:
+Rails one click creates a sandboxed Ruby environment accessible within
+the app. When you're ready to move on simply delete the directory
+created by Rails One Click.
 
-* Doesn't tell if the installation fails. I'm working on this!
-* Add a log interface for the installation.
-* Add a better interface for managing rails apps
-* The UI sucks!
+### Project Status: ALPHA
+
+This software is not ready!
+
+Project Roadmap:
+
+* Finish installation screen. Add log view and handle errors.
+* Create manage your apps view. his view will include handy controls for
+  managing your apps, starting the server, etc
+* Create help sections and tips. Things will go wrong, help users when
+  they're stuck
+* Add a sample app
+* Work on the UI
 
 What's already there:
 
@@ -23,10 +36,10 @@ What's already there:
 ### Ruby sandbox
 
 Ruby is installed inside Documents/rails_one_click. That way if you ever
-mess up something you'll just need to delete the ruby directory inside
+mess up with something you'll just need to delete the ruby directory inside
 that folder.
 
-### Project status
+### Development
 
 This project is alpha. I'm looking for contributors and especially
 testers. Your help is much apreciated.
@@ -46,12 +59,6 @@ Yehuda Katz has recently announced the need for a Rails one click installer
 for Mac Os X. He even got some founding for his project, which means the
 community really needs it. With Rails one
 click I want to create a first step toward that vision that Yehuda had.
-I really hope this project will be useful to Yehuda and eventually for
-the Ruby community itself.
-
-### License
-
-MIT
 
 
 ### Early Development screenshots
