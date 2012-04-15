@@ -18,16 +18,27 @@ functionalities are already there.
 
 If you can, please test the installation process in your system.
 
+Here's a [video](https://vimeo.com/40403458) of how you can test the app.
+
+Please excuse my pronunciation, it's been a long night!
+
+You can download the app
+[here](https://github.com/downloads/oscardelben/RailsOneClick/RailsOneClick.zip).
+
+Here's how you can help:
+
+* download and try the app (there's a video linked in the README)
+* contribute directly to the code. If you're not into Cocoa, please look into the scripts folder to see if everything makes sense
+* discuss about app usability (this is very important, but keep in mind this is targeted at beginners, I don't want to end up with multiple rubies for example)
+* Open issues on Github!
+* Create an icon if you're into that sort of things!
+
+Follow me on [Github](https://github.com/oscardelben) and [Twitter](http://twitter.com/oscardelben) to keep up with development.
+
 ### Ruby sandbox
 
 Ruby is installed inside Documents/rails_one_click. That way if you ever
-mess up with something you'll just need to delete the ruby directory inside
-that folder.
-
-### How to run it
-
-Right now, download the xcode project, build and run and follow
-instructions!
+mess up with something you'll can just erase that folder.
 
 ### Early Development screenshots
 
