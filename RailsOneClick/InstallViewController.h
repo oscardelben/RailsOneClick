@@ -9,13 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import <dispatch/dispatch.h>
 #import "AppController.h"
+#import "LogWindowController.h"
 
 @interface InstallViewController : NSViewController
 
 @property (retain) IBOutlet NSButton *installButton;
 @property (retain) IBOutlet NSProgressIndicator *progressIndicator;
+@property (retain) IBOutlet NSTextField *statusLabel;
 @property (retain) AppController *appController;
+@property (retain) LogWindowController *logWindowController;
 
 - (IBAction)installRuby:(id)sender;
+- (IBAction)openLogWindow:(id)sender;
 
 @end

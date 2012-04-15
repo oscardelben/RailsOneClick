@@ -15,10 +15,11 @@
 @synthesize view;
 @synthesize currentViewController;
 
-- (BOOL)isRubyInstalled
+- (BOOL)isRailsInstalled
 {
+    return NO;
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* foofile = [documentsPath stringByAppendingPathComponent:@"rails_one_click/ruby/bin/ruby"];
+    NSString* foofile = [documentsPath stringByAppendingPathComponent:@"rails_one_click/ruby/bin/rails"];
     return [[NSFileManager defaultManager] fileExistsAtPath:foofile];
 }
 
@@ -26,7 +27,7 @@
 
 - (void)awakeFromNib
 {
-    if ([self isRubyInstalled]) {
+    if ([self isRailsInstalled]) {
         self.currentViewController = [[RubyInstalledViewController alloc] initWithNibName:@"RubyInstalledViewController" bundle:nil];
         [self.view addSubview:currentViewController.view];
     }

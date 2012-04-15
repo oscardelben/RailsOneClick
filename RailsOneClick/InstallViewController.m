@@ -11,33 +11,45 @@
 #define TASK_SUCCESS_VALUE 0
 
 @interface InstallViewController ()
-- (void)executeScript:(NSString *)name;
+- (BOOL)executeScript:(NSString *)name;
 @end
 
 @implementation InstallViewController
 
 @synthesize installButton, progressIndicator;
 @synthesize appController;
+@synthesize statusLabel;
+@synthesize logWindowController;
 
 - (void)awakeFromNib
 {
+    [statusLabel setHidden:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataReceived:) name:NSFileHandleDataAvailableNotification object:nil];
+
+    self.logWindowController = [[LogWindowController alloc] initWithWindowNibName:@"LogWindowController"];
 }
 
 - (IBAction)installRuby:(id)sender
 {
     // Don't block the main thread
+    // TODO: if rails installation fails don't install Ruby again
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
         [installButton setEnabled:NO];
         [progressIndicator startAnimation:nil];
+        [statusLabel setHidden:NO];
+        [statusLabel setStringValue:@"Beginning installation"];
+        // reset log data
+        [logWindowController performSelectorOnMainThread:@selector(resetTextView) withObject:nil waitUntilDone:NO];
     }];
     
     
     [operation addExecutionBlock:^{
         [self executeScript:@"install_directory_structure"];
+        [statusLabel setStringValue:@"Installing Ruby"];
         [self executeScript:@"install_ruby"];
+        [statusLabel setStringValue:@"Beginning Rails"];
         [self executeScript:@"install_rails"];
     }];
     
@@ -45,15 +57,15 @@
         [progressIndicator stopAnimation:nil];
         [installButton setEnabled:YES];
         [appController rubyInstalled];
+        [statusLabel setHidden:YES];
     }];
     
     [queue addOperation:operation];
     
 }
 
-- (void)executeScript:(NSString *)name
+- (BOOL)executeScript:(NSString *)name
 {
-    NSLog(@"executing %@", name);
     NSString *scriptPath = [[NSBundle mainBundle] pathForResource:name ofType:@"sh" inDirectory:@"scripts"];
 
     NSTask *task;
@@ -70,22 +82,20 @@
     NSFileHandle *file;
     file = [pipe fileHandleForReading];
     
-    // TODO: we may have to send the terminate message if the user exits
+    // TODO: we may have to send the terminate message if the user exits the app
     [task launch];
     [file waitForDataInBackgroundAndNotify];
     [task waitUntilExit];
 
-    // TODO: we should return a BOOL here to indicate success or failure
     int status = [task terminationStatus];
     
     if (status == TASK_SUCCESS_VALUE)
-        NSLog(@"Task succeeded.");
+        return YES;
     else
-        NSLog(@"Task failed.");
+        return NO;
 
 }
 
-// TODO: we can output this to a log viewer or something
 - (void)dataReceived:(NSNotification *)notification
 {
     NSFileHandle *fileHandle = [notification object];
@@ -94,11 +104,18 @@
     data = [fileHandle availableData];
 
     if ([data length]) {
-        NSString *string = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        NSLog (@"%@", string);
+        NSString *newData = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
+        [logWindowController performSelectorOnMainThread:@selector(appendString:) withObject:newData waitUntilDone:NO];
+        
     }
     [fileHandle waitForDataInBackgroundAndNotify];
 }
 
+- (IBAction)openLogWindow:(id)sender
+{    
+    if (! [logWindowController.window isVisible]) {
+        [logWindowController.window makeKeyAndOrderFront:nil];
+    }
+}
 
 @end

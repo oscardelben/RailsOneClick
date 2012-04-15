@@ -1292,25 +1292,25 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {594, 351}}</string>
+				<string key="NSWindowRect">{{335, 390}, {650, 400}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Rails One Click</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{600, 350}</string>
-				<string key="NSWindowContentMinSize">{600, 350}</string>
+				<string key="NSWindowContentMaxSize">{650, 400}</string>
+				<string key="NSWindowContentMinSize">{650, 400}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
-					<string key="NSFrameSize">{594, 351}</string>
+					<string key="NSFrameSize">{650, 400}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
-				<string key="NSMinSize">{600, 372}</string>
-				<string key="NSMaxSize">{600, 372}</string>
+				<string key="NSMinSize">{650, 422}</string>
+				<string key="NSMaxSize">{650, 422}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
