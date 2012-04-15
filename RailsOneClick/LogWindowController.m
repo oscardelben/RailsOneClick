@@ -9,7 +9,7 @@
 #import "LogWindowController.h"
 
 @interface LogWindowController ()
-
+- (void)appendBuffer;
 @end
 
 @implementation LogWindowController
@@ -27,6 +27,11 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [self appendBuffer];
+}
+
 - (void)resetTextView
 {
     [textView setString:@""];
@@ -37,20 +42,11 @@
 - (void)appendString:(NSString *)aString
 {
     // if text view is not visible we save the string in a buffer
+    // if it is visible we check if we have something in the buffer to show
     if (textView) {
-        
-        NSMutableString *content = [NSMutableString string];
-        
-        // check if we need to add the buffer
-        if ([buffer length] > 0) {
-            [content appendString:buffer];
-            // reset buffer
-            buffer = [NSMutableString string];
-        }
-        
-        [content appendString:aString];
-        
-        [[[textView textStorage] mutableString] appendString:content];
+        [self appendBuffer];
+
+        [[[textView textStorage] mutableString] appendString:aString];
         
         [textView scrollPageDown:nil];
     } else {        
@@ -59,5 +55,11 @@
     
 }
 
-
+- (void)appendBuffer
+{
+    if ([buffer length] > 0) {
+        [[[textView textStorage] mutableString] appendString:buffer];
+        buffer = [NSMutableString string];
+    }
+}
 @end

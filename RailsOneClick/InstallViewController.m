@@ -12,6 +12,9 @@
 
 @interface InstallViewController ()
 - (BOOL)executeScript:(NSString *)name;
+- (void)showErrorMessage;
+- (void)setupInstallationUI;
+- (void)teardownInstallationUI;
 @end
 
 @implementation InstallViewController
@@ -36,28 +39,40 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        [installButton setEnabled:NO];
-        [progressIndicator startAnimation:nil];
-        [statusLabel setHidden:NO];
-        [statusLabel setStringValue:@"Beginning installation"];
+        [self setupInstallationUI];
         // reset log data
         [logWindowController performSelectorOnMainThread:@selector(resetTextView) withObject:nil waitUntilDone:NO];
     }];
     
     
     [operation addExecutionBlock:^{
-        [self executeScript:@"install_directory_structure"];
+        BOOL success;
+        
+        success = [self executeScript:@"install_directory_structure"];
+        
+        if (!success) {
+            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
+            return;
+        }
+        
         [statusLabel setStringValue:@"Installing Ruby"];
         [self executeScript:@"install_ruby"];
+        
+        if (!success) {
+            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
+            return;
+        }
+        
         [statusLabel setStringValue:@"Beginning Rails"];
         [self executeScript:@"install_rails"];
-    }];
-    
-    [operation setCompletionBlock:^{
-        [progressIndicator stopAnimation:nil];
-        [installButton setEnabled:YES];
+        
+        if (!success) {
+            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
+            return;
+        }
+
+        [self teardownInstallationUI];
         [appController rubyInstalled];
-        [statusLabel setHidden:YES];
     }];
     
     [queue addOperation:operation];
@@ -117,5 +132,29 @@
         [logWindowController.window makeKeyAndOrderFront:nil];
     }
 }
+
+- (void)showErrorMessage
+{
+    [self teardownInstallationUI];
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:INSTALLATION_ERROR_MESSAGE defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+    [alert runModal];
+}
+
+- (void)setupInstallationUI
+{
+    [installButton setEnabled:NO];
+    [progressIndicator startAnimation:nil];
+    [statusLabel setHidden:NO];
+    [statusLabel setStringValue:@"Beginning installation"];
+}
+
+- (void)teardownInstallationUI
+{
+    [progressIndicator stopAnimation:nil];
+    [installButton setEnabled:YES];
+    [statusLabel setHidden:YES];
+}
+
 
 @end

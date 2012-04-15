@@ -51,6 +51,7 @@
 		BFC8587E153AB743005D0372 /* LogWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogWindowController.h; sourceTree = "<group>"; };
 		BFC8587F153AB743005D0372 /* LogWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogWindowController.m; sourceTree = "<group>"; };
 		BFC85880153AB743005D0372 /* LogWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWindowController.xib; sourceTree = "<group>"; };
+		BFC85890153AF29E005D0372 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 				BFC858471539A3D0005D0372 /* Supporting Files */,
 				BFC8585D1539BD9B005D0372 /* AppController.h */,
 				BFC8585E1539BD9B005D0372 /* AppController.m */,
+				BFC85890153AF29E005D0372 /* Settings.h */,
 			);
 			path = RailsOneClick;
 			sourceTree = "<group>";
