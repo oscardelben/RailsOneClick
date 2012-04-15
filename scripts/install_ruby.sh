@@ -7,14 +7,30 @@ set -e
 # Installation path needs to be passed from the command line
 target_dir=~/Documents/rails_one_click/ruby
 
+# install yaml support
+
 cd /tmp
+if [ ! -e yaml-0.1.4 ]
+then
+  curl -O http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+  tar xzvf yaml-0.1.4.tar.gz
+fi
+
+cd yaml-0.1.4
+./configure --prefix=$target_dir
+make && make install
+
+# install ruby
+
+cd ../
+
 if [ ! -e ruby-1.9.3-p125 ]
 then
-  curl -o http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p125.tar.gz
+  curl -O http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p125.tar.gz
   tar xzvf ruby-1.9.3-p125.tar.gz
 fi
 cd ruby-1.9.3-p125
-./configure --prefix=$target_dir --disable-install-doc
+./configure --prefix=$target_dir --disable-install-doc --enable-shared --enable-pthread --with-libyaml-dir=$target_dir
 make && make install
 
 exit

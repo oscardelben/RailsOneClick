@@ -64,7 +64,7 @@
             return;
         }
         
-        [statusLabel setStringValue:@"Beginning Rails"];
+        [statusLabel setStringValue:@"Installing Rails"];
         [self executeScript:@"install_rails"];
         
         if (!success) {

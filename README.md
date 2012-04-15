@@ -16,6 +16,7 @@ created by Rails One Click.
 This software is not ready for beginners, yet. However, the basic
 functionalities are already there.
 
+If you can, please test the installation process in your system.
 
 ### Ruby sandbox
 
@@ -23,27 +24,10 @@ Ruby is installed inside Documents/rails_one_click. That way if you ever
 mess up with something you'll just need to delete the ruby directory inside
 that folder.
 
-### Development
-
-This project is alpha. I'm looking for contributors and especially
-testers. Your help is much apreciated.
-
-Developers note: rvm will conflict with Rails one click. It is
-recommended that you temporarily comment it out in your profile file
-while you test this project.
-
 ### How to run it
 
 Right now, download the xcode project, build and run and follow
 instructions!
-
-### History
-
-Yehuda Katz has recently announced the need for a Rails one click installer
-for Mac Os X. He even got some founding for his project, which means the
-community really needs it. With Rails one
-click I want to create a first step toward that vision that Yehuda had.
-
 
 ### Early Development screenshots
 

@@ -24,12 +24,20 @@
     return self;
 }
 
-- (IBAction)openTerminalWindow:(id)sender
+// TODO: this doesn't work if you open new windows!
+- (NSString *)terminalScript
 {
     NSString *script = @"cd ~/Documents/rails_one_click; export PATH=~/Documents/rails_one_click/ruby/bin:$PATH; clear";
-    NSString *apple_script = [NSString stringWithFormat:@"tell application \"Terminal\" to do script \"%@\"\ntell application \"Terminal\" to activate", script];
     
-    NSAppleScript *as = [[NSAppleScript alloc] initWithSource:apple_script];
+    return [NSString stringWithFormat:@"tell application \"Terminal\" to do script \"%@\"\n" \
+            @"tell application \"Terminal\" to activate",
+            script];
+}
+
+
+- (IBAction)openTerminalWindow:(id)sender
+{
+    NSAppleScript *as = [[NSAppleScript alloc] initWithSource:[self terminalScript]];
     [as executeAndReturnError:nil];
     
 }
