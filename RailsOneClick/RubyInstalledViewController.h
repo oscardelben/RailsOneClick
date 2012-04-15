@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RubyInstalledViewController : NSViewController
+@interface RubyInstalledViewController : NSViewController <NSTabViewDelegate, NSTableViewDataSource>
+
+@property (retain) NSMutableArray *apps;
 
 - (IBAction)openTerminalWindow:(id)sender;
+- (IBAction)openFinder:(id)sender;
 
 @end
