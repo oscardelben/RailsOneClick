@@ -22,7 +22,6 @@
 		BFC858721539DD43005D0372 /* RubyInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC858701539DD43005D0372 /* RubyInstalledViewController.xib */; };
 		BFC85881153AB743005D0372 /* LogWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8587F153AB743005D0372 /* LogWindowController.m */; };
 		BFC85882153AB743005D0372 /* LogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC85880153AB743005D0372 /* LogWindowController.xib */; };
-		BFC8589E153B0093005D0372 /* RailsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8589D153B0093005D0372 /* RailsApp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +52,6 @@
 		BFC8587F153AB743005D0372 /* LogWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogWindowController.m; sourceTree = "<group>"; };
 		BFC85880153AB743005D0372 /* LogWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWindowController.xib; sourceTree = "<group>"; };
 		BFC85890153AF29E005D0372 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		BFC8589C153B0093005D0372 /* RailsApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RailsApp.h; sourceTree = "<group>"; };
-		BFC8589D153B0093005D0372 /* RailsApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RailsApp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +107,6 @@
 		BFC858461539A3D0005D0372 /* RailsOneClick */ = {
 			isa = PBXGroup;
 			children = (
-				BFC85893153AFB31005D0372 /* Models */,
 				BFC85883153AB748005D0372 /* LogWindow */,
 				BFC8587D153AB233005D0372 /* ManageAppsScreen */,
 				BFC8587B153AB21E005D0372 /* InstallationScreen */,
@@ -173,15 +169,6 @@
 				BFC85880153AB743005D0372 /* LogWindowController.xib */,
 			);
 			name = LogWindow;
-			sourceTree = "<group>";
-		};
-		BFC85893153AFB31005D0372 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BFC8589C153B0093005D0372 /* RailsApp.h */,
-				BFC8589D153B0093005D0372 /* RailsApp.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +246,6 @@
 				BFC858671539C6C9005D0372 /* InstallViewController.m in Sources */,
 				BFC858711539DD43005D0372 /* RubyInstalledViewController.m in Sources */,
 				BFC85881153AB743005D0372 /* LogWindowController.m in Sources */,
-				BFC8589E153B0093005D0372 /* RailsApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

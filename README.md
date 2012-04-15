@@ -13,25 +13,9 @@ created by Rails One Click.
 
 ### Project Status: ALPHA
 
-This software is not ready!
+This software is not ready for beginners, yet. However, the basic
+functionalities are already there.
 
-Project Roadmap:
-
-* Create manage your apps view. This view will include handy controls for
-  managing your apps, starting the server, etc
-* Create help sections and tips. Things will go wrong, help users when
-  they're stuck
-* Add a sample app
-* Work on the UI
-
-What's already there:
-
-* Installation screen
-* Ruby 1.9.3-p125 sandboxed inside Documents/rails_one_click/ruby
-* Latest rails version ready to use
-* Once ruby is installed, you'll be able to open a terminal window
-  inside Documents/rails_one_click with Ruby and Rails already loaded.
-(I will provide a better interface soon with server start and stop etc).
 
 ### Ruby sandbox
 
