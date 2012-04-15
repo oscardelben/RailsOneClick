@@ -9,6 +9,7 @@
 #import "InstallViewController.h"
 
 #define TASK_SUCCESS_VALUE 0
+#define SUCCESS_ALERT_TAG 1
 
 @interface InstallViewController ()
 - (BOOL)executeScript:(NSString *)name;
@@ -47,7 +48,7 @@
     
     [operation addExecutionBlock:^{
         BOOL success;
-        
+                
         success = [self executeScript:@"install_directory_structure"];
         
         if (!success) {
@@ -72,7 +73,7 @@
         }
 
         [self teardownInstallationUI];
-        [appController rubyInstalled];
+        [self performSelectorOnMainThread:@selector(showSuccessMessage) withObject:nil waitUntilDone:NO];
     }];
     
     [queue addOperation:operation];
@@ -154,6 +155,17 @@
     [progressIndicator stopAnimation:nil];
     [installButton setEnabled:YES];
     [statusLabel setHidden:YES];
+}
+
+- (void)showSuccessMessage
+{
+    NSAlert *alert = [NSAlert alertWithMessageText:INSTALLATION_SUCCESS_MESSAGE defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+    [alert beginSheetModalForWindow:self.view.window modalDelegate:self didEndSelector:@selector(installationCompleted) contextInfo:nil];
+}
+
+- (void)installationCompleted
+{
+    [appController rubyInstalled];
 }
 
 

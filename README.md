@@ -17,8 +17,7 @@ This software is not ready!
 
 Project Roadmap:
 
-* Finish installation screen. Add log view and handle errors.
-* Create manage your apps view. his view will include handy controls for
+* Create manage your apps view. This view will include handy controls for
   managing your apps, starting the server, etc
 * Create help sections and tips. Things will go wrong, help users when
   they're stuck
@@ -27,6 +26,7 @@ Project Roadmap:
 
 What's already there:
 
+* Installation screen
 * Ruby 1.9.3-p125 sandboxed inside Documents/rails_one_click/ruby
 * Latest rails version ready to use
 * Once ruby is installed, you'll be able to open a terminal window

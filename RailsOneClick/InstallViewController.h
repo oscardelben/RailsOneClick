@@ -11,7 +11,7 @@
 #import "AppController.h"
 #import "LogWindowController.h"
 
-@interface InstallViewController : NSViewController
+@interface InstallViewController : NSViewController <NSAlertDelegate>
 
 @property (retain) IBOutlet NSButton *installButton;
 @property (retain) IBOutlet NSProgressIndicator *progressIndicator;
