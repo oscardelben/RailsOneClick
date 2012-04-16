@@ -104,7 +104,6 @@
             return;
         }
         
-        [statusLabel setStringValue:@"Installing Ruby"];
         [self executeScript:@"install_ruby"];
         
         if (!success) {
@@ -112,7 +111,6 @@
             return;
         }
         
-        [statusLabel setStringValue:@"Installing Rails"];
         [self executeScript:@"install_rails"];
         
         if (!success) {
@@ -169,7 +167,12 @@
 
     if ([data length]) {
         NSString *newData = [[NSString alloc] initWithData:data encoding: NSUTF8StringEncoding];
-        [logWindowController performSelectorOnMainThread:@selector(appendString:) withObject:newData waitUntilDone:NO];
+        
+        if ([newData rangeOfString:@"ROC_STATUS"].location == NSNotFound) {
+            [logWindowController performSelectorOnMainThread:@selector(appendString:) withObject:newData waitUntilDone:NO];
+        } else {
+            [statusLabel setStringValue:[newData substringFromIndex:12]];
+        }
         
     }
     [fileHandle waitForDataInBackgroundAndNotify];
