@@ -38,7 +38,7 @@ Follow me on [Github](https://github.com/oscardelben) and [Twitter](http://twitt
 ### Ruby sandbox
 
 Ruby is installed inside Documents/rails_one_click. That way if you ever
-mess up with something you'll can just erase that folder.
+mess up with something you can just erase that folder.
 
 ### Early Development screenshots
 
