@@ -19,6 +19,7 @@
 @property (retain) AppController *appController;
 @property (retain) LogWindowController *logWindowController;
 
+- (IBAction)checkPrerequisites:(id)sender;
 - (IBAction)installRuby:(id)sender;
 - (IBAction)openLogWindow:(id)sender;
 

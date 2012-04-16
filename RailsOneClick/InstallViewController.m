@@ -33,8 +33,56 @@
     self.logWindowController = [[LogWindowController alloc] initWithWindowNibName:@"LogWindowController"];
 }
 
+- (void)showPrerequisitesInstallationDialog
+{
+    NSAlert *alert = [NSAlert alertWithMessageText:PREREQUISITES_INSTALLATION_MESSAGE defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+    [alert runModal];
+}
+
+- (BOOL)prerequisitesInstalled
+{
+    NSTask *task;
+    task = [[NSTask alloc] init];
+    [task setLaunchPath:@"/usr/bin/type"];
+    [task setArguments:[NSArray arrayWithObject:@"make"]];
+    
+    NSPipe *pipe;
+    pipe = [NSPipe pipe];
+    [task setStandardOutput: pipe];
+    [task setStandardError:pipe];
+    [task setStandardInput:[NSPipe pipe]];
+    
+    
+    NSFileHandle *file;
+    file = [pipe fileHandleForReading];
+    
+    [task launch];
+    NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
+    
+    [task waitUntilExit];
+    
+    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+    return [result rangeOfString:@"not found"].location == NSNotFound;
+}
+
+- (IBAction)checkPrerequisites:(id)sender
+{
+    if ([self prerequisitesInstalled]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:PREREQUISITES_INSTALLED defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+    } else {
+        [self showPrerequisitesInstallationDialog];
+    }
+}
+
 - (IBAction)installRuby:(id)sender
 {
+    if (! [self prerequisitesInstalled]) {
+        [self showPrerequisitesInstallationDialog];
+        return;
+    }
+    
     // Don't block the main thread
     // TODO: if rails installation fails don't install Ruby again
     
