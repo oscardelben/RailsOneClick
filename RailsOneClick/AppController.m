@@ -16,7 +16,7 @@
 @synthesize currentViewController;
 
 - (BOOL)isRailsInstalled
-{
+{       
     NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* foofile = [documentsPath stringByAppendingPathComponent:@"rails_one_click/ruby/bin/rails"];
     return [[NSFileManager defaultManager] fileExistsAtPath:foofile];
