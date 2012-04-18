@@ -40,10 +40,15 @@ Follow me on [Github](https://github.com/oscardelben) and [Twitter](http://twitt
 Ruby is installed inside Documents/rails_one_click. That way if you ever
 mess up with something you can just erase that folder.
 
+
+### Credits
+
+Development: Oscar Del Ben ([@oscardelben](http://twitter.com/oscardelben)])
+UI: ([@zachinglis](http://twitter.com/zachinglis)])
+
 ### Early Development screenshots
 
 ![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/install.png)
 
 ![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/installed.png)
 
-![Rails One Click](https://raw.github.com/oscardelben/RailsOneClick/master/screenshots/console.png)

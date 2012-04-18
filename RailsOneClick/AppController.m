@@ -22,8 +22,6 @@
     return [[NSFileManager defaultManager] fileExistsAtPath:foofile];
 }
 
-// TODO: remove duplication
-
 - (void)awakeFromNib
 {
     if ([self isRailsInstalled]) {

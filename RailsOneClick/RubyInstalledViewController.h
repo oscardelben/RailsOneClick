@@ -10,6 +10,9 @@
 
 @interface RubyInstalledViewController : NSViewController
 
+@property (unsafe_unretained) IBOutlet NSButton *finderButton;
+@property (unsafe_unretained) IBOutlet NSButton *terminalButton;
+
 - (IBAction)openTerminalWindow:(id)sender;
 - (IBAction)openFinder:(id)sender;
 

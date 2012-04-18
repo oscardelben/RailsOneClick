@@ -13,15 +13,28 @@
 @end
 
 @implementation RubyInstalledViewController
+@synthesize finderButton;
+@synthesize terminalButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)changeButtonColor:(NSButton *)button color:(NSColor *)color
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setAlignment:NSCenterTextAlignment];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     color, NSForegroundColorAttributeName,
+                                     style, NSParagraphStyleAttributeName,
+                                     [NSFont fontWithName:@"Lucida Grande" size:12], NSFontAttributeName,
+                                     [[NSShadow alloc] init], NSShadowAttributeName,
+                                     nil];
+    NSAttributedString *attrString = [[NSAttributedString alloc]
+                                      initWithString:[button title] attributes:attrsDictionary];
+    [button setAttributedTitle:attrString];
+}
+
+- (void)awakeFromNib
+{
+    [self changeButtonColor:finderButton color:[NSColor whiteColor]];
+    [self changeButtonColor:terminalButton color:[NSColor whiteColor]];
 }
 
 // TODO: this doesn't work if you open new windows!
@@ -64,7 +77,7 @@
 
 - (IBAction)openRailsOneClick:(id)sender
 {
-    [self openURL:@"https://github.com/oscardelben/RailsOneClick"];
+    [self openURL:@"http://railsoneclick.com/"];
 }
 
 @end

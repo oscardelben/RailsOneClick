@@ -13,11 +13,12 @@
 
 @interface InstallViewController : NSViewController <NSAlertDelegate>
 
-@property (retain) IBOutlet NSButton *installButton;
-@property (retain) IBOutlet NSProgressIndicator *progressIndicator;
 @property (retain) IBOutlet NSTextField *statusLabel;
 @property (retain) AppController *appController;
 @property (retain) LogWindowController *logWindowController;
+@property (unsafe_unretained) IBOutlet NSButton *checkPrerequisitesButton;
+@property (unsafe_unretained) IBOutlet NSButton *installButton;
+@property (unsafe_unretained) IBOutlet NSButton *logButton;
 
 - (IBAction)checkPrerequisites:(id)sender;
 - (IBAction)installRuby:(id)sender;
