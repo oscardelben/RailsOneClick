@@ -44,6 +44,7 @@ mess up with something you can just erase that folder.
 ### Credits
 
 Development: Oscar Del Ben ([@oscardelben](http://twitter.com/oscardelben)])
+
 UI: ([@zachinglis](http://twitter.com/zachinglis)])
 
 ### Early Development screenshots
