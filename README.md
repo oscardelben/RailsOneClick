@@ -31,7 +31,6 @@ Here's how you can help:
 * contribute directly to the code. If you're not into Cocoa, please look into the scripts folder to see if everything makes sense
 * discuss about app usability (this is very important, but keep in mind this is targeted at beginners, I don't want to end up with multiple rubies for example)
 * Open issues on Github!
-* Create an icon if you're into that sort of things!
 
 Follow me on [Github](https://github.com/oscardelben) and [Twitter](http://twitter.com/oscardelben) to keep up with development.
 
