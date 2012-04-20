@@ -26,14 +26,14 @@ make && make install
 
 cd ../
 
-if [ ! -e ruby-1.9.3-p125 ]
+if [ ! -e ruby-1.9.3-p194 ]
 then
   echo "ROC_STATUS: Downloading Ruby"
-  curl -O http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p125.tar.gz
-  tar xzvf ruby-1.9.3-p125.tar.gz
+  curl -O http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p194.tar.gz
+  tar xzvf ruby-1.9.3-p194.tar.gz
 fi
 echo "ROC_STATUS: Installing Ruby"
-cd ruby-1.9.3-p125
+cd ruby-1.9.3-p194
 ./configure --prefix=$target_dir --disable-install-doc --enable-shared --enable-pthread --with-libyaml-dir=$target_dir
 make && make install
 
