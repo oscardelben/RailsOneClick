@@ -7,6 +7,7 @@
 //
 
 #import "InstallViewController.h"
+#import "AppHelper.h"
 
 #define TASK_SUCCESS_VALUE 0
 #define SUCCESS_ALERT_TAG 1
@@ -27,21 +28,6 @@
 @synthesize logWindowController;
 @synthesize checkPrerequisitesButton;
 
-- (void)changeButtonColor:(NSButton *)button color:(NSColor *)color
-{
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setAlignment:NSCenterTextAlignment];
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     color, NSForegroundColorAttributeName,
-                                     style, NSParagraphStyleAttributeName,
-                                     [NSFont fontWithName:@"Lucida Grande" size:12], NSFontAttributeName,
-                                     [[NSShadow alloc] init], NSShadowAttributeName,
-                                     nil];
-    NSAttributedString *attrString = [[NSAttributedString alloc]
-                                      initWithString:[button title] attributes:attrsDictionary];
-    [button setAttributedTitle:attrString];
-}
-
 - (void)awakeFromNib
 {
     [statusLabel setHidden:YES];
@@ -49,8 +35,10 @@
 
     self.logWindowController = [[LogWindowController alloc] initWithWindowNibName:@"LogWindowController"];
     
-    [self changeButtonColor:checkPrerequisitesButton color:[NSColor whiteColor]];
-    [self changeButtonColor:installButton color:[NSColor whiteColor]];
+    [AppHelper changeButtonColor:checkPrerequisitesButton color:[NSColor whiteColor] alternate:NO];
+    [AppHelper changeButtonColor:checkPrerequisitesButton color:[NSColor blackColor] alternate:YES];
+    [AppHelper changeButtonColor:installButton color:[NSColor whiteColor] alternate:NO];
+    [AppHelper changeButtonColor:installButton color:[NSColor blackColor] alternate:YES];
 }
 
 - (void)showPrerequisitesInstallationDialog
@@ -98,23 +86,22 @@
 
 - (IBAction)installRuby:(id)sender
 {
+    if (installing) {
+        return;
+    }
+    
     if (! [self prerequisitesInstalled]) {
         [self showPrerequisitesInstallationDialog];
         return;
     }
     
     // Don't block the main thread
-    // TODO: if rails installation fails don't install Ruby again
+    
+    [self setupInstallationUI];
+    [logWindowController resetTextView];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        [self setupInstallationUI];
-        // reset log data
-        [logWindowController performSelectorOnMainThread:@selector(resetTextView) withObject:nil waitUntilDone:NO];
-    }];
-    
-    
-    [operation addExecutionBlock:^{
         BOOL success;
                 
         success = [self executeScript:@"install_directory_structure"];
@@ -138,7 +125,6 @@
             return;
         }
 
-        [self teardownInstallationUI];
         [self performSelectorOnMainThread:@selector(showSuccessMessage) withObject:nil waitUntilDone:NO];
     }];
     
@@ -208,18 +194,24 @@
 
 - (void)showErrorMessage
 {
-    [self teardownInstallationUI];
     
     [logButton setImage:[NSImage imageNamed:@"log_yellow.png"]];
     [logButton setAlternateImage:[NSImage imageNamed:@"log_yellow.png"]];
     
     NSAlert *alert = [NSAlert alertWithMessageText:INSTALLATION_ERROR_MESSAGE defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
     [alert runModal];
+    [self teardownInstallationUI];
 }
 
 - (void)setupInstallationUI
 {
-    [installButton setEnabled:NO];
+    installing = YES;
+    
+    [AppHelper changeButtonColor:installButton color:[NSColor blackColor] alternate:NO];
+    [installButton setImage:[NSImage imageNamed:@"button_yellow.png"]];
+    [installButton setTitle:@"Installing Ruby..."];
+    [installButton setAlternateTitle:@"Installing Ruby..."];
+    
     [statusLabel setHidden:NO];
     [statusLabel setStringValue:@"Beginning installation"];
     [logButton setImage:[NSImage imageNamed:@"log.png"]];
@@ -228,8 +220,14 @@
 
 - (void)teardownInstallationUI
 {
-    [installButton setEnabled:YES];
+    [installButton setImage:[NSImage imageNamed:@"button_gray.png"]];
+    [installButton setTitle:@"Begin installation"];
+    [installButton setAlternateTitle:@"Begin installation"];
+    [AppHelper changeButtonColor:installButton color:[NSColor whiteColor] alternate:NO];
+    
     [statusLabel setHidden:YES];
+    
+    installing = NO;
 }
 
 - (void)showSuccessMessage

@@ -84,7 +84,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="305625820">
-							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags">-2080244224</int>
 							<int key="NSCellFlags2">134217728</int>
 							<string key="NSContents">Check Prerequisites</string>
 							<object class="NSFont" key="NSSupport" id="594690453">
@@ -100,7 +100,10 @@
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">button_gray</string>
 							</object>
-							<reference key="NSAlternateImage" ref="274323433"/>
+							<object class="NSCustomResource" key="NSAlternateImage" id="874101566">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">button_yellow</string>
+							</object>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
 							<int key="NSPeriodicDelay">200</int>
@@ -139,7 +142,7 @@
 					<object class="NSTextField" id="765750859">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{174, 73}, {446, 18}}</string>
+						<string key="NSFrame">{{174, 73}, {446, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="625248110"/>
@@ -276,23 +279,20 @@
 						<string key="NSFrame">{{415, 7}, {215, 37}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="438571160">
-							<int key="NSCellFlags">67239424</int>
+							<int key="NSCellFlags">-2080244224</int>
 							<int key="NSCellFlags2">134217728</int>
-							<string key="NSContents">Begin Installation</string>
-							<object class="NSFont" key="NSSupport">
-								<string key="NSName">Helvetica</string>
-								<double key="NSSize">14</double>
-								<int key="NSfFlags">16</int>
-							</object>
+							<string key="NSContents">Begin installation</string>
+							<reference key="NSSupport" ref="594690453"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="977790306"/>
 							<int key="NSButtonFlags">139215103</int>
 							<int key="NSButtonFlags2">134</int>
 							<reference key="NSNormalImage" ref="274323433"/>
-							<reference key="NSAlternateImage" ref="274323433"/>
+							<reference key="NSAlternateImage" ref="874101566"/>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
 							<int key="NSPeriodicDelay">200</int>
@@ -1502,6 +1502,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="button_gray">{215, 37}</string>
+			<string key="button_yellow">{215, 37}</string>
 			<string key="install_logo">{98, 77}</string>
 			<string key="installation_bg">{650, 353}</string>
 			<string key="installation_bottom">{650, 50}</string>

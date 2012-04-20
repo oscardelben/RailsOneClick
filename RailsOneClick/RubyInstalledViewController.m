@@ -7,6 +7,7 @@
 //
 
 #import "RubyInstalledViewController.h"
+#import "AppHelper.h"
 
 @interface RubyInstalledViewController ()
 
@@ -16,25 +17,13 @@
 @synthesize finderButton;
 @synthesize terminalButton;
 
-- (void)changeButtonColor:(NSButton *)button color:(NSColor *)color
-{
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setAlignment:NSCenterTextAlignment];
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     color, NSForegroundColorAttributeName,
-                                     style, NSParagraphStyleAttributeName,
-                                     [NSFont fontWithName:@"Lucida Grande" size:12], NSFontAttributeName,
-                                     [[NSShadow alloc] init], NSShadowAttributeName,
-                                     nil];
-    NSAttributedString *attrString = [[NSAttributedString alloc]
-                                      initWithString:[button title] attributes:attrsDictionary];
-    [button setAttributedTitle:attrString];
-}
 
 - (void)awakeFromNib
 {
-    [self changeButtonColor:finderButton color:[NSColor whiteColor]];
-    [self changeButtonColor:terminalButton color:[NSColor whiteColor]];
+    [AppHelper changeButtonColor:finderButton color:[NSColor whiteColor] alternate:NO];
+    [AppHelper changeButtonColor:finderButton color:[NSColor blackColor] alternate:YES];
+    [AppHelper changeButtonColor:terminalButton color:[NSColor whiteColor] alternate:NO];
+    [AppHelper changeButtonColor:terminalButton color:[NSColor blackColor] alternate:YES];
 }
 
 // TODO: this doesn't work if you open new windows!

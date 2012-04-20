@@ -12,6 +12,9 @@
 #import "LogWindowController.h"
 
 @interface InstallViewController : NSViewController <NSAlertDelegate>
+{
+    BOOL installing;
+}
 
 @property (retain) IBOutlet NSTextField *statusLabel;
 @property (retain) AppController *appController;

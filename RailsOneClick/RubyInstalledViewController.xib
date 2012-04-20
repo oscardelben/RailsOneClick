@@ -254,6 +254,7 @@
 						<string key="NSFrame">{{415, 5}, {215, 37}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="125297339">
@@ -268,6 +269,10 @@
 							<object class="NSCustomResource" key="NSNormalImage" id="288062502">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">button_gray</string>
+							</object>
+							<object class="NSCustomResource" key="NSAlternateImage" id="217166043">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">button_yellow</string>
 							</object>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
@@ -294,6 +299,7 @@
 							<int key="NSButtonFlags">139215103</int>
 							<int key="NSButtonFlags2">134</int>
 							<reference key="NSNormalImage" ref="288062502"/>
+							<reference key="NSAlternateImage" ref="217166043"/>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
 							<int key="NSPeriodicDelay">200</int>
@@ -1438,6 +1444,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="button_gray">{215, 37}</string>
+			<string key="button_yellow">{215, 37}</string>
 			<string key="installation_bg">{650, 353}</string>
 			<string key="installation_bottom">{650, 50}</string>
 			<string key="manager_logo">{98, 77}</string>
