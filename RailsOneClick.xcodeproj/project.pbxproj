@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BF18F17E15419C7100C89E0D /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18F17D15419C7100C89E0D /* AppHelper.m */; };
+		BF18F1811542CA6500C89E0D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF18F1801542CA6500C89E0D /* Sparkle.framework */; };
+		BF18F1831542CAB500C89E0D /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF18F1801542CA6500C89E0D /* Sparkle.framework */; };
+		BF18F1861542CB7400C89E0D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = BF18F1851542CB7400C89E0D /* dsa_pub.pem */; };
 		BFC858411539A3D0005D0372 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC858401539A3D0005D0372 /* Cocoa.framework */; };
 		BFC8584B1539A3D0005D0372 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC858491539A3D0005D0372 /* InfoPlist.strings */; };
 		BFC8584D1539A3D0005D0372 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC8584C1539A3D0005D0372 /* main.m */; };
@@ -37,9 +40,24 @@
 		BFC858BF154069AE005D0372 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BFC858BE154069AE005D0372 /* icon.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF18F1821542CAA100C89E0D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF18F1831542CAB500C89E0D /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BF18F17C15419C7100C89E0D /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
 		BF18F17D15419C7100C89E0D /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		BF18F1801542CA6500C89E0D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		BF18F1851542CB7400C89E0D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		BFC8583C1539A3D0005D0372 /* RailsOneClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailsOneClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC858401539A3D0005D0372 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BFC858431539A3D0005D0372 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,12 +105,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC858411539A3D0005D0372 /* Cocoa.framework in Frameworks */,
+				BF18F1811542CA6500C89E0D /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF18F1841542CB6000C89E0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF18F1851542CB7400C89E0D /* dsa_pub.pem */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BFC858311539A3D0005D0372 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +143,7 @@
 		BFC8583F1539A3D0005D0372 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF18F1801542CA6500C89E0D /* Sparkle.framework */,
 				BFC858401539A3D0005D0372 /* Cocoa.framework */,
 				BFC858421539A3D0005D0372 /* Other Frameworks */,
 			);
@@ -135,6 +163,7 @@
 		BFC858461539A3D0005D0372 /* RailsOneClick */ = {
 			isa = PBXGroup;
 			children = (
+				BF18F1841542CB6000C89E0D /* Resources */,
 				BFC858A3153EB1E0005D0372 /* Images */,
 				BFC85883153AB748005D0372 /* LogWindow */,
 				BFC8587D153AB233005D0372 /* ManageAppsScreen */,
@@ -230,6 +259,7 @@
 				BFC858381539A3D0005D0372 /* Sources */,
 				BFC858391539A3D0005D0372 /* Frameworks */,
 				BFC8583A1539A3D0005D0372 /* Resources */,
+				BF18F1821542CAA100C89E0D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -291,6 +321,7 @@
 				BFC858BC153ED6B7005D0372 /* rails_click_homepage.png in Resources */,
 				BFC858BD153ED6B7005D0372 /* rails_documentation.png in Resources */,
 				BFC858BF154069AE005D0372 /* icon.icns in Resources */,
+				BF18F1861542CB7400C89E0D /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +422,10 @@
 		BFC8585B1539A3D0005D0372 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailsOneClick/RailsOneClick-Prefix.pch";
 				INFOPLIST_FILE = "RailsOneClick/RailsOneClick-Info.plist";
@@ -403,6 +438,10 @@
 		BFC8585C1539A3D0005D0372 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RailsOneClick/RailsOneClick-Prefix.pch";
 				INFOPLIST_FILE = "RailsOneClick/RailsOneClick-Info.plist";
