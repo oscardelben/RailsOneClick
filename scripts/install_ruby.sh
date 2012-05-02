@@ -34,7 +34,7 @@ then
 fi
 echo "ROC_STATUS: Installing Ruby"
 cd ruby-1.9.3-p194
-./configure --prefix=$target_dir --disable-install-doc --enable-shared --enable-pthread --with-libyaml-dir=$target_dir
+./configure --prefix=$target_dir --disable-install-doc --enable-shared --enable-pthread --with-libyaml-dir=$target_dir --enable-load-relative
 make && make install
 
 exit
