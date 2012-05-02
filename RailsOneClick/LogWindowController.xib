@@ -46,6 +46,7 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMinSize">{400, 150}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -150,9 +151,7 @@
 													<integer value="5"/>
 													<object class="NSURL">
 														<nil key="NS.base"/>
-														<object class="NSMutableString" key="NS.relative">
-															<characters key="NS.bytes">file://localhost/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources/DVTIbeamCursor.tiff</characters>
-														</object>
+														<string key="NS.relative">file://localhost/Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Resources/DVTIbeamCursor.tiff</string>
 													</object>
 												</array>
 											</array>
@@ -170,6 +169,7 @@
 									<string key="NSFrame">{{474, 1}, {15, 286}}</string>
 									<reference key="NSSuperview" ref="443897939"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:84</string>
 									<reference key="NSTarget" ref="443897939"/>
 									<string key="NSAction">_doScroller:</string>
@@ -208,6 +208,7 @@
 					<reference key="NSNextKeyView" ref="443897939"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSMinSize">{400, 172}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
