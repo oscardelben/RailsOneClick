@@ -52,7 +52,7 @@
     NSTask *task;
     task = [[NSTask alloc] init];
     [task setLaunchPath:@"/usr/bin/type"];
-    [task setArguments:[NSArray arrayWithObject:@"make"]];
+    [task setArguments:[NSArray arrayWithObject:@"git-diff-grep"]];
     
     NSPipe *pipe;
     pipe = [NSPipe pipe];

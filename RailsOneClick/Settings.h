@@ -3,6 +3,6 @@
 
 #define INSTALLATION_SUCCESS_MESSAGE @"Ruby on Rails was correctly installed in your system!"
 
-#define PREREQUISITES_INSTALLATION_MESSAGE @"Before developing on Mac os X you need to download a free copy of the \"Command Line Tools for Xcode\" package from https://developer.apple.com/downloads - In alternative you can download a copy of Xcode from the AppStore."
+#define PREREQUISITES_INSTALLATION_MESSAGE @"Before developing on Mac os X you need to download a free copy of the \"Command Line Tools for Xcode\" package from https://developer.apple.com/downloads"
 
 #define PREREQUISITES_INSTALLED @"You are good to go! You can now install Ruby on Rails in your system!"
