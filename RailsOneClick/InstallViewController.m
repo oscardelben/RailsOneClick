@@ -14,7 +14,7 @@
 
 @interface InstallViewController ()
 - (BOOL)executeScript:(NSString *)name;
-- (void)showErrorMessage;
+- (void)showErrorMessage:(NSString *)msg;
 - (void)setupInstallationUI;
 - (void)teardownInstallationUI;
 @end
@@ -107,21 +107,24 @@
         success = [self executeScript:@"install_directory_structure"];
         
         if (!success) {
-            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
+            [self performSelectorOnMainThread:@selector(showErrorMessage:) withObject:INSTALLATION_ERROR_MESSAGE waitUntilDone:NO];
             return;
         }
-        
-        [self executeScript:@"install_ruby"];
-        
-        if (!success) {
-            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
-            return;
+
+        BOOL rubyInstalled = [appController isRubyInstalled];
+        if (!rubyInstalled) {
+            success = [self executeScript:@"install_ruby"];
+
+            if (!success) {
+                [self performSelectorOnMainThread:@selector(showErrorMessage:) withObject:INSTALLATION_MESSAGE_RUBY_FAILED waitUntilDone:NO];
+                return;
+            }
         }
-        
-        [self executeScript:@"install_rails"];
+
+        success = [self executeScript:@"install_rails"];
         
         if (!success) {
-            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:NO];
+            [self performSelectorOnMainThread:@selector(showErrorMessage:) withObject:INSTALLATION_MESSAGE_RAILS_FAILED waitUntilDone:NO];
             return;
         }
 
@@ -192,13 +195,13 @@
     }
 }
 
-- (void)showErrorMessage
+- (void)showErrorMessage:(NSString *)msg
 {
     
     [logButton setImage:[NSImage imageNamed:@"log_yellow.png"]];
     [logButton setAlternateImage:[NSImage imageNamed:@"log_yellow.png"]];
     
-    NSAlert *alert = [NSAlert alertWithMessageText:INSTALLATION_ERROR_MESSAGE defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+    NSAlert *alert = [NSAlert alertWithMessageText:msg defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
     [alert runModal];
     [self teardownInstallationUI];
 }
@@ -216,6 +219,9 @@
     [statusLabel setStringValue:@"Beginning installation"];
     [logButton setImage:[NSImage imageNamed:@"log.png"]];
     [logButton setAlternateImage:[NSImage imageNamed:@"log.png"]];
+
+    // disable check checkPrerequisitesButton while installing
+    [checkPrerequisitesButton setEnabled:NO];
 }
 
 - (void)teardownInstallationUI
@@ -227,6 +233,8 @@
     
     [statusLabel setHidden:YES];
     
+    [checkPrerequisitesButton setEnabled:YES];
+
     installing = NO;
 }
 
