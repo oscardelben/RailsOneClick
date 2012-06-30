@@ -15,4 +15,6 @@
 
 - (void)rubyInstalled;
 
+- (BOOL)isRubyInstalled;
+
 @end
