@@ -1,3 +1,6 @@
+Note: this project is no longer maintained since better tools now exist. Please check out [railsinstaller](http://railsinstaller.org/) or [Tokaido](https://github.com/tokaido/tokaidoapp/releases).
+
+
 # Rails One Click Install for Mac Os X (10.6 or higher)
 
 Rails One Click is the perfect tool for installing and managing rails
